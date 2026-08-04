@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 20px;
+}
+div{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#addProduct, #addTeacher{
+    width: auto;
+}
+a, h2{
+    text-align: center;
+    margin: auto;
+}
+table{
+    margin: auto;
+}
+#actions{
+    display: flex;
+    align-items: center;
+}
