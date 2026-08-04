@@ -57,24 +57,36 @@ class TeacherController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Teacher $teacher)
     {
         //
+        $students = Student::all();
+        return view('teachers.edit', compact('teacher', 'students'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Teacher $teacher)
     {
         //
+        $request->validate([
+            'name' => 'required',
+        ]);
+        $teacher->update([
+            'name' => $request->name,
+        ]);
+        $teacher->students()->sync($request->students ?? []);
+        return redirect()->route('teachers.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Teacher $teacher)
     {
         //
+        $teacher->delete();
+        return redirect()->route('teachers.index');
     }
 }
