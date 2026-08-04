@@ -45,4 +45,4 @@ A simple Laravel CRUD application built to practice many-to-many relationships b
 
 ### Student
 
-![students](public/appScreenshots/studentsTable.png.png)
+![students](public/appScreenshots/studentsTable.png)
